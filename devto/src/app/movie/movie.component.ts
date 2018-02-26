@@ -15,10 +15,10 @@ export class MovieComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.movie = [
-      {titre : 'NULL', releaseDate: '22 March 2014', picture : '../assets/Img/Null.jpg', teaser : 'https://vimeo.com/128674604'},
-      {titre : 'La ch\'tite famille', releaseDate:'22 march 2018', picture : '../assets/Img/lachtitefamille.jpg'},
-      {titre : "Black Panther", releaseDate:'29 january 2018', picture : '../assets/Img/blackpanther.jpeg'},
-      {titre : "Fifthy Shades Freed", releaseDate:'9 february 2018', picture : '../assets/Img/fifth.jpg'}
+      {titre : 'NULL', releaseDate: '22/03/2014', picture : '../assets/Img/Null.jpg', note :3},
+      {titre : 'La ch\'tite famille', releaseDate:'22/03/2018', picture : '../assets/Img/lachtitefamille.jpg', note :3},
+      {titre : "Black Panther", releaseDate:'29/01/2018', picture : '../assets/Img/blackpanther.jpeg', note :4},
+      {titre : "Fifthy Shades Freed", releaseDate:'9/02/2018', picture : '../assets/Img/fifth.jpg', note :2}
       ]
   };
 
