@@ -1,9 +1,17 @@
-<p>
-  Movie works !
-</p>
-<div class="list-movie">
-  <div class="list-movie" *ngFor="Let movie">
-    {{movie}}
+<h2>Nombre de film disponible : {{nbrFilm}}</h2>
+
+<div class="list-movie" *ngIf="nbrFilm<=4;else erreur"  >
+  <div class="list-movie" *ngFor="let movies of movie">
+    <ul>
+      <li><img src="../assets" alt="" *ngFor="let picture of pictures"></li>
+      <input type="button" value="Show more" (click)="myEvent(movies.releaseDate + '\n' + movies.titre)">
+    </ul>
   </div>
 </div>
+
+<ng-template #erreur>
+  <p>Fuck duck</p>
+</ng-template>
+
+
 

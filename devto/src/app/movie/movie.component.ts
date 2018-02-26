@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
+
 @Component({
   selector: 'list-movie',
   templateUrl: './movie.component.html',
@@ -7,18 +8,24 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class MovieComponent implements OnInit, OnDestroy {
 
-  private movie: Array<any>;
+  private movie: Array<object>;
 
   constructor() {
   }
 
   ngOnInit() {
     this.movie = [
-      {film1 : 'NULL', releaseDate: '2013'},
-      {film2 : 'La ch\'tite famille', releaseDate:'2018'},
-      {film3 : "Black Panther", releaseDate:'2018'},
-      {film4 : "Fifthy Shades Freed", releaseDate:'2018'}
-      ]};
+      {titre : 'NULL', releaseDate: '2013', picture : '../assets/Null.jpg' },
+      {titre : 'La ch\'tite famille', releaseDate:'2018', picture : '../assets/lachtitefamille.jpg' },
+      {titre : "Black Panther", releaseDate:'2018', picture : '../assets/blackpanther.jpeg'},
+      {titre : "Fifthy Shades Freed", releaseDate:'2018', picture : '../assets/fifth.jpg'}
+      ]
+
+  this.nbrFilm = this.movie.length};
+
+  myEvent(movie) {
+    alert(movie);
+  }
 
   ngOnDestroy() {
     this.movie = [];
