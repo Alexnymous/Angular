@@ -1,3 +1,12 @@
-<p>
-  signup works!
-</p>
+<h1>Sign Up</h1>
+
+<form #registerForm="ngForm" (ngSubmit)="register()">
+  <input type="text" [(ngModel)]="user.username" name="username" placeholder="Nom d'utilisateur" required>
+  <div *ngIf="username.invalid && username.dirty">
+    Vous devez saisir un nom d'utilisateur
+  </div>
+  <input type="text" [(ngModel)]="user.password" name="password" placeholder="Mot de passe" required pattern=".{6,}">
+  <button type="submit" [disabled]="!registerForm.form.valid">S'inscrire</button>
+</form>
+
+

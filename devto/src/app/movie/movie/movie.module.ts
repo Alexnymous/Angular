@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import {Router, RouterModule, Routes} from '@angular/router';
 
 
 import { MovieComponent } from './movie/movie.component';
@@ -11,6 +11,8 @@ import { StarFilmPipe } from './star-film.pipe';
 import { VisionnageComponent } from '../visionnage/visionnage.component';
 
 import { NotFoundComponent } from '../not-found/not-found.component';
+import {MovieService} from "../../movie.service";
+import {HttpModule} from "@angular/http";
 
 const routes: Routes = [
   {path:'Film', component:MovieComponent},
@@ -21,7 +23,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule, BrowserModule, RouterModule.forChild(routes)
+    CommonModule, HttpModule, BrowserModule, RouterModule.forChild(routes)
   ],
   declarations: [
     MovieComponent,
@@ -29,6 +31,13 @@ const routes: Routes = [
     StarFilmPipe,
     VisionnageComponent,
   ],
-  providers: [],
+  providers: [MovieService],
 })
-export class MovieModule { }
+export class MovieModule {
+  constructor(
+    private router: Router,
+    private MovieService: MovieService
+    ){}
+
+}
+

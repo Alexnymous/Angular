@@ -4,15 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MovieModule} from "./movie/movie/movie.module";
-import { LoginComponent } from './movie/login/Login/login.component';
 import { NotFoundComponent } from './movie/not-found/not-found.component';
 import {AccueilComponent} from "./movie/accueil/accueil.component";
-import { SignupComponent } from './movie/login/SignUp/signup.component';
+import {LoginModule} from "./movie/login/login.module";
+
+
+
 
 const routes: Routes = [
   {path:'accueil', component:AccueilComponent},
-  {path:'login',component:LoginComponent},
-  {path:'signup',component:SignupComponent},
+
   {path:'**', component:NotFoundComponent},
 ]
 
@@ -22,11 +23,10 @@ const routes: Routes = [
     AppComponent,
     AccueilComponent,
     NotFoundComponent,
-    LoginComponent,
-    SignupComponent
+
   ],
   imports: [
-    BrowserModule,MovieModule,RouterModule.forRoot(routes)
+    BrowserModule,MovieModule,LoginModule,RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
